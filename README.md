@@ -29,13 +29,13 @@ checkm lineage_wf -t 8 ./02-assembled ./02-assembly_checkm
 ### Annotate genomes using Prokka
 Example command
 ```
-prokka --outdir ./03-annotated/Sample01 --kingdom Bacteria --gcode 4 --prefix Sample01 ./00-assemblies_all/Sample01.fna
+prokka --outdir ./03-annotated --kingdom Bacteria --gcode 4 --prefix Sample01 ./00-assemblies_all/Sample01.fna
 ```
 ### Pangenome analysis using Roary
 ```
 roary -f ./04-Roary/Prank_all -e -z -v -t 4 ./03-annotated/*gff -p 24 -i 92
 ```
-### Annotate the Roary pan_genome_reference.fa using EggNOG-mapper 
+### Annotate the Roary output file pan_genome_reference.fa using EggNOG-mapper 
 ```
 emapper.py -i ./04-Roary/Prank_all/pan_genome_reference.fa --itype CDS --data_dir ./ref_eggnog2 --trans_table 4 --output_dir ./04-Roary/Prank_all/eggnog_annotations -o pan_genome_eggnog
 ```
