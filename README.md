@@ -37,7 +37,7 @@ Example command:
 ```
 flye --nano-raw ./02-assembly_Trycycler/02-subsamples/Sample01/subsample_01.fastq --threads 16 --plasmids --out-dir ./02-assembly_Trycycler/assembly_01_Sample01 && cp ./02-assembly_Trycycler/assembly_01_Sample01/assembly.fasta ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_01.fasta && cp ./02-assembly_Trycycler/assembly_01_Sample01/assembly_graph.gfa ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_01.gfa && rm -r ./02-assembly_Trycycler/assembly_01_Sample01
 ```
-#### 4. Miniams assemblies
+#### 4. Miniasm assemblies
 Example command:
 ```
 /mnt/lfs2/kandrews/bin/miniasm_and_minipolish.sh ./02-assembly_Trycycler/02-subsamples/Sample01/subsample_07.fastq 16 > ./02-assembly_Trycycler/assembly_07_Sample01.gfa && /mnt/lfs2/kandrews/bin/any2fasta ./02-assembly_Trycycler/assembly_07_Sample01.gfa > ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_07.fasta && cp ./02-assembly_Trycycler/assembly_07_Sample01.gfa ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_07.gfa && rm ./02-assembly_Trycycler/assembly_07_Sample01.gfa
