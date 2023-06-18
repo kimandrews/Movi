@@ -15,10 +15,72 @@ centrifuge -p 40 -t -x ./databases/centrifuge/nt -1 ./01-cleaned/Sample01_R1.fas
 centrifuge-kreport -x ./databases/centrifuge/nt ./02-Centrifuge/Sample01_results.tsv > ./02-Centrifuge/Sample01_results.Kreport
 ```
 
-### Illumina assembly using SPAdes 
+### Illumina assembly using SPAdes (for samples with no Oxford Nanopore data)
 Example command:
 ```
 spades.py --careful -t 60 -k 33,77,127 -1 ./01-cleaned/Sample01_R1.fastq.gz -2 ./01-cleaned/Sample01_R2.fastq.gz -o ./02-assembled/Sample01
+```
+### Trycycler assembly for Oxford Nanopore sequence data
+
+#### 1. Remove short and low-quality reads
+Example command:
+```
+/bin/Filtlong/bin/filtlong --min_length 500 --keep_percent 95 ./00-RawData_merged/Sample01.fastq > ./02-assembly_Trycycler/01-filter/Sample01_filtered.fastq
+```
+#### 2. Subsample the reads
+Example command:
+```
+trycycler subsample --reads ./02-assembly_Trycycler/01-filter/Sample01_filtered.fastq --out_dir ./02-assembly_Trycycler/02-subsamples/Sample01 --genome_size 1m --count 18
+```
+#### 3. Flye assemblies
+Example command:
+```
+flye --nano-raw ./02-assembly_Trycycler/02-subsamples/Sample01/subsample_01.fastq --threads 16 --plasmids --out-dir ./02-assembly_Trycycler/assembly_01_Sample01 && cp ./02-assembly_Trycycler/assembly_01_Sample01/assembly.fasta ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_01.fasta && cp ./02-assembly_Trycycler/assembly_01_Sample01/assembly_graph.gfa ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_01.gfa && rm -r ./02-assembly_Trycycler/assembly_01_Sample01
+```
+#### 4. Miniams assemblies
+Example command:
+```
+/mnt/lfs2/kandrews/bin/miniasm_and_minipolish.sh ./02-assembly_Trycycler/02-subsamples/Sample01/subsample_07.fastq 16 > ./02-assembly_Trycycler/assembly_07_Sample01.gfa && /mnt/lfs2/kandrews/bin/any2fasta ./02-assembly_Trycycler/assembly_07_Sample01.gfa > ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_07.fasta && cp ./02-assembly_Trycycler/assembly_07_Sample01.gfa ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_07.gfa && rm ./02-assembly_Trycycler/assembly_07_Sample01.gfa
+```
+#### 5. Raven assemblies
+Example command:
+```
+raven --threads 16 ./02-assembly_Trycycler/02-subsamples/Sample01/subsample_13.fastq > ./02-assembly_Trycycler/03-assemblies/Sample01/assembly_13.fasta && rm raven.cereal
+```
+#### 6. Clustering
+Example command:
+```
+trycycler cluster --assemblies ./02-assembly_Trycycler/03-assemblies/Sample01/*.fasta --reads ./02-assembly_Trycycler/01-filter/Sample01_filtered.fastq --out_dir ./02-assembly_Trycycler/04-clustering/Sample01
+```
+#### 7. Reconciliation
+Example command:
+```
+trycycler reconcile --reads ./02-assembly_Trycycler/01-filter/Sample01_filtered.fastq --cluster_dir ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001
+```
+#### 8. Multiple sequence alignment
+Example command:
+```
+trycycler msa --cluster_dir ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001
+```
+#### 9. Partition reads
+Example command:
+```
+trycycler partition --reads ./02-assembly_Trycycler/01-filter/Sample01_filtered.fastq --cluster_dirs ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001
+```
+#### 10. Generate a consensus
+Example command:
+```
+trycycler consensus --cluster_dir ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001
+```
+#### 11. Polish with Oxford Nanopore reads using Medaka
+Example command:
+```
+medaka_consensus -i ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/4_reads.fastq -d ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/7_final_consensus.fasta -o ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/medaka -m r941_min_high_g360 && mv ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/medaka/consensus.fasta ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/8_medaka.fasta && rm -r ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/medaka ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/*.fai ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/*.mmi
+```
+#### 12. Polish with Illumina reads
+Example command:
+```
+bowtie2 -1 ./00-RawData_Illumina/Sample01_R1.fastq.gz -2 ./00-RawData_Illumina/Sample01_R2.fastq.gz -x ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/8_medaka  --threads 16 -I 305 -X 912 --local --very-sensitive-local | samtools sort > ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/illumina_alignments.bam && samtools index ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/illumina_alignments.bam && pilon --genome ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/8_medaka.fasta --frags ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/illumina_alignments.bam --output ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/8_medaka_pilon1 --changes && rm ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/illumina_alignments.bam && rm ./02-assembly_Trycycler/04-clustering/Sample01/cluster_001/illumina_alignments.bam.bai
 ```
 
 ### Evaluate assembly completeness and contamination using CheckM
