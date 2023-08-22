@@ -1,0 +1,3557 @@
+{
+  "version": "v2",
+  "meta": {
+    "title": "Mycoplasma ovipneumoniae",
+    "updated": "2023-08-22",
+    "build_url": "https://github.com/kimandrews/Movi",
+    "maintainers": [
+      {
+        "name": "Kim Andrews",
+        "url": ""
+      }
+    ],
+    "display_defaults": {
+      "color_by": "country",
+      "distance_measure": "div",
+      "geo_resolution": "country",
+      "map_triplicate": true,
+      "branch_label": "none"
+    },
+    "colorings": [
+      {
+        "key": "hostspecies",
+        "title": "Host Species",
+        "type": "categorical",
+        "scale": [
+          [
+            "Domestic sheep",
+            "#447CCD"
+          ],
+          [
+            "Domestic goat",
+            "#6FB488"
+          ],
+          [
+            "Bighorn sheep",
+            "#BEBB48"
+          ],
+          [
+            "Caribou",
+            "#E29E39"
+          ]
+        ]
+      },
+      {
+        "key": "clade",
+        "title": "Clade",
+        "type": "categorical"
+      },
+      {
+        "key": "country",
+        "title": "Country",
+        "type": "categorical",
+        "scale": [
+          [
+            "Australia",
+            "#E2562B"
+          ],
+          [
+            "Bosnia Herzegovina",
+            "#E29E39"
+          ],
+          [
+            "Brazil",
+            "#BEBB48"
+          ],
+          [
+            "China",
+            "#8ABB6A"
+          ],
+          [
+            "France",
+            "#5EA9A1"
+          ],
+          [
+            "USA",
+            "#447CCD"
+          ]
+        ]
+      },
+      {
+        "key": "us_state",
+        "title": "US State",
+        "type": "categorical",
+        "scale": [
+          [
+            "Alaska",
+            "#403CC5"
+          ],
+          [
+            "Arizona",
+            "#4067CF"
+          ],
+          [
+            "Idaho",
+            "#4A8BC3"
+          ],
+          [
+            "Montana",
+            "#5AA4A9"
+          ],
+          [
+            "Nebraska",
+            "#6FB488"
+          ],
+          [
+            "Nevada",
+            "#8BBB69"
+          ],
+          [
+            "New Mexico",
+            "#A9BD53"
+          ],
+          [
+            "Oregon",
+            "#C7B944"
+          ],
+          [
+            "South Dakota",
+            "#DDA93C"
+          ],
+          [
+            "Utah",
+            "#E68A35"
+          ],
+          [
+            "Washington",
+            "#E35C2C"
+          ],
+          [
+            "Wyoming",
+            "#DB2823"
+          ]
+        ]
+      },
+      {
+        "key": "domestic_pop",
+        "title": "Domestic populations (USA)",
+        "type": "categorical",
+        "scale": [
+          [
+            "Farm 1: Idaho",
+            "#4068CF"
+          ],
+          [
+            "Farm 2: Idaho",
+            "#5098B9"
+          ],
+          [
+            "Farm 3: Idaho",
+            "#6CB28C"
+          ],
+          [
+            "Farm 4: Nebraska",
+            "#94BD62"
+          ],
+          [
+            "Farm 5: Alaska",
+            "#BFBB47"
+          ],
+          [
+            "Farm 6: Idaho",
+            "#DFA53B"
+          ],
+          [
+            "Farm 7: Washington",
+            "#E67131"
+          ],
+          [
+            "Farm 8: Washington",
+            "#DB2823"
+          ]
+        ]
+      },
+      {
+        "key": "wild_pop",
+        "title": "Bighorn populations",
+        "type": "categorical",
+        "scale": [
+          [
+            "Arizona: Bighorns",
+            "#4334BF"
+          ],
+          [
+            "Arizona: Vermillions",
+            "#3F55CE"
+          ],
+          [
+            "Idaho: Black Butte",
+            "#4376CD"
+          ],
+          [
+            "Idaho: Lost River",
+            "#4C91C0"
+          ],
+          [
+            "Idaho: S. Beaverhead",
+            "#59A4A9"
+          ],
+          [
+            "Montana: Elkhorn Mtns",
+            "#6AB18F"
+          ],
+          [
+            "Nebraska: Barrel Butte",
+            "#7FB975"
+          ],
+          [
+            "Nebraska: Fort Robinson",
+            "#97BD5F"
+          ],
+          [
+            "Nebraska: Hubbards Gap",
+            "#AFBD4F"
+          ],
+          [
+            "Nevada: Captive",
+            "#C7B944"
+          ],
+          [
+            "New Mexico: Taos Pueblo",
+            "#D9AD3D"
+          ],
+          [
+            "Oregon: Lostine",
+            "#E49838"
+          ],
+          [
+            "South Dakota: Rapid Creek",
+            "#E67932"
+          ],
+          [
+            "Utah: Antelope Island",
+            "#E1512A"
+          ],
+          [
+            "Wyoming: Whiskey",
+            "#DB2823"
+          ]
+        ]
+      },
+      {
+        "key": "year",
+        "title": "Year",
+        "type": "categorical",
+        "scale": [
+          [
+            "1971",
+            "#4D21AD"
+          ],
+          [
+            "1988",
+            "#403FC6"
+          ],
+          [
+            "2007",
+            "#3F63CF"
+          ],
+          [
+            "2008",
+            "#4783C8"
+          ],
+          [
+            "2009",
+            "#539BB5"
+          ],
+          [
+            "2010",
+            "#63AC9B"
+          ],
+          [
+            "2013",
+            "#77B67F"
+          ],
+          [
+            "2014",
+            "#8EBC66"
+          ],
+          [
+            "2015",
+            "#A8BD53"
+          ],
+          [
+            "2016",
+            "#C1BA47"
+          ],
+          [
+            "2017",
+            "#D6B03F"
+          ],
+          [
+            "2018",
+            "#E39C39"
+          ],
+          [
+            "2019",
+            "#E67C33"
+          ],
+          [
+            "2020",
+            "#E1532B"
+          ],
+          [
+            "2021",
+            "#DB2823"
+          ]
+        ]
+      }
+    ],
+    "filters": [
+      "hostspecies",
+      "clade",
+      "country",
+      "us_state",
+      "domestic_pop",
+      "wild_pop",
+      "year"
+    ],
+    "geo_resolutions": [
+      {
+        "key": "country",
+        "demes": {
+          "France": {
+            "latitude": 46.603354,
+            "longitude": 1.8883335
+          },
+          "China": {
+            "latitude": 35.000074,
+            "longitude": 104.999927
+          },
+          "USA": {
+            "latitude": 39.7837304,
+            "longitude": -100.4458824
+          },
+          "Australia": {
+            "latitude": -24.7761085,
+            "longitude": 134.755
+          },
+          "Bosnia Herzegovina": {
+            "latitude": 43.84864,
+            "longitude": 18.35644
+          },
+          "Brazil": {
+            "latitude": -10.3333332,
+            "longitude": -53.1999999
+          }
+        }
+      }
+    ],
+    "panels": [
+      "tree"
+    ]
+  },
+  "tree": {
+    "name": "NODE_0000000",
+    "node_attrs": {
+      "div": 0
+    },
+    "branch_attrs": {},
+    "children": [
+      {
+        "name": "NODE_0000001",
+        "node_attrs": {
+          "div": 0.007493
+        },
+        "branch_attrs": {},
+        "children": [
+          {
+            "name": "CHIAS_Crony",
+            "node_attrs": {
+              "div": 0.040349,
+              "clade": {
+                "value": "Goat clade"
+              },
+              "country": {
+                "value": "USA"
+              },
+              "hostspecies": {
+                "value": "Domestic goat"
+              },
+              "us_state": {
+                "value": "Washington"
+              },
+              "year": {
+                "value": "2014"
+              },
+              "domestic_pop": {
+                "value": "Farm 8: Washington"
+              }
+            },
+            "branch_attrs": {}
+          },
+          {
+            "name": "NODE_0000002",
+            "node_attrs": {
+              "div": 0.016766
+            },
+            "branch_attrs": {},
+            "children": [
+              {
+                "name": "CHIFR_F8588",
+                "node_attrs": {
+                  "div": 0.045951,
+                  "clade": {
+                    "value": "Goat clade"
+                  },
+                  "country": {
+                    "value": "France"
+                  },
+                  "hostspecies": {
+                    "value": "Domestic goat"
+                  },
+                  "year": {
+                    "value": "2014"
+                  }
+                },
+                "branch_attrs": {}
+              },
+              {
+                "name": "NODE_0000003",
+                "node_attrs": {
+                  "div": 0.024531999999999998
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "CHIFR_F8525",
+                    "node_attrs": {
+                      "div": 0.055917,
+                      "clade": {
+                        "value": "Goat clade"
+                      },
+                      "country": {
+                        "value": "France"
+                      },
+                      "hostspecies": {
+                        "value": "Domestic goat"
+                      },
+                      "year": {
+                        "value": "2013"
+                      }
+                    },
+                    "branch_attrs": {}
+                  },
+                  {
+                    "name": "NODE_0000004",
+                    "node_attrs": {
+                      "div": 0.03446
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "CHIFR_F10330",
+                        "node_attrs": {
+                          "div": 0.061075,
+                          "clade": {
+                            "value": "Goat clade"
+                          },
+                          "country": {
+                            "value": "France"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic goat"
+                          },
+                          "year": {
+                            "value": "2015"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "CHIBN_274",
+                        "node_attrs": {
+                          "div": 0.060080999999999996,
+                          "clade": {
+                            "value": "Goat clade"
+                          },
+                          "country": {
+                            "value": "Bosnia Herzegovina"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic goat"
+                          },
+                          "year": {
+                            "value": "2010"
+                          }
+                        },
+                        "branch_attrs": {}
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "NODE_0000005",
+        "node_attrs": {
+          "div": 0.007095
+        },
+        "branch_attrs": {},
+        "children": [
+          {
+            "name": "CHICH_TC4",
+            "node_attrs": {
+              "div": 0.051438,
+              "clade": {
+                "value": "Goat clade"
+              },
+              "country": {
+                "value": "China"
+              },
+              "hostspecies": {
+                "value": "Domestic goat"
+              },
+              "year": {
+                "value": "2010"
+              }
+            },
+            "branch_attrs": {}
+          },
+          {
+            "name": "NODE_0000006",
+            "node_attrs": {
+              "div": 0.013101
+            },
+            "branch_attrs": {},
+            "children": [
+              {
+                "name": "NODE_0000007",
+                "node_attrs": {
+                  "div": 0.020071
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "NODE_0000008",
+                    "node_attrs": {
+                      "div": 0.037446999999999994
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "CHICH_TC3",
+                        "node_attrs": {
+                          "div": 0.057595999999999994,
+                          "clade": {
+                            "value": "Goat clade"
+                          },
+                          "country": {
+                            "value": "China"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic goat"
+                          },
+                          "year": {
+                            "value": "2010"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "CHICH_TC1",
+                        "node_attrs": {
+                          "div": 0.05452499999999999,
+                          "clade": {
+                            "value": "Goat clade"
+                          },
+                          "country": {
+                            "value": "China"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic goat"
+                          },
+                          "year": {
+                            "value": "2010"
+                          }
+                        },
+                        "branch_attrs": {}
+                      }
+                    ]
+                  },
+                  {
+                    "name": "NODE_0000009",
+                    "node_attrs": {
+                      "div": 0.025439
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "CHICH_IK33",
+                        "node_attrs": {
+                          "div": 0.052637,
+                          "clade": {
+                            "value": "Goat clade"
+                          },
+                          "country": {
+                            "value": "China"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic goat"
+                          },
+                          "year": {
+                            "value": "1988"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "NODE_0000010",
+                        "node_attrs": {
+                          "div": 0.031695
+                        },
+                        "branch_attrs": {},
+                        "children": [
+                          {
+                            "name": "CHICH_TC2",
+                            "node_attrs": {
+                              "div": 0.051739,
+                              "clade": {
+                                "value": "Goat clade"
+                              },
+                              "country": {
+                                "value": "China"
+                              },
+                              "hostspecies": {
+                                "value": "Domestic goat"
+                              },
+                              "year": {
+                                "value": "2010"
+                              }
+                            },
+                            "branch_attrs": {}
+                          },
+                          {
+                            "name": "NODE_0000011",
+                            "node_attrs": {
+                              "div": 0.047952
+                            },
+                            "branch_attrs": {},
+                            "children": [
+                              {
+                                "name": "CHICH_TC5",
+                                "node_attrs": {
+                                  "div": 0.057409,
+                                  "clade": {
+                                    "value": "Goat clade"
+                                  },
+                                  "country": {
+                                    "value": "China"
+                                  },
+                                  "hostspecies": {
+                                    "value": "Domestic goat"
+                                  },
+                                  "year": {
+                                    "value": "2010"
+                                  }
+                                },
+                                "branch_attrs": {}
+                              },
+                              {
+                                "name": "NODE_0000012",
+                                "node_attrs": {
+                                  "div": 0.058697
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "CHICH_TC7",
+                                    "node_attrs": {
+                                      "div": 0.058705,
+                                      "clade": {
+                                        "value": "Goat clade"
+                                      },
+                                      "country": {
+                                        "value": "China"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Domestic goat"
+                                      },
+                                      "year": {
+                                        "value": "2010"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "CHICH_SC01",
+                                    "node_attrs": {
+                                      "div": 0.058704,
+                                      "clade": {
+                                        "value": "Goat clade"
+                                      },
+                                      "country": {
+                                        "value": "China"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Domestic goat"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "NODE_0000013",
+                "node_attrs": {
+                  "div": 0.019121
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "CHICH_TC8",
+                    "node_attrs": {
+                      "div": 0.045161,
+                      "clade": {
+                        "value": "Goat clade"
+                      },
+                      "country": {
+                        "value": "China"
+                      },
+                      "hostspecies": {
+                        "value": "Domestic goat"
+                      },
+                      "year": {
+                        "value": "2010"
+                      }
+                    },
+                    "branch_attrs": {}
+                  },
+                  {
+                    "name": "NODE_0000014",
+                    "node_attrs": {
+                      "div": 0.024966
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "NODE_0000015",
+                        "node_attrs": {
+                          "div": 0.030341999999999997
+                        },
+                        "branch_attrs": {},
+                        "children": [
+                          {
+                            "name": "CHIF5_ANC4221",
+                            "node_attrs": {
+                              "div": 0.060384999999999994,
+                              "clade": {
+                                "value": "Goat clade"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "hostspecies": {
+                                "value": "Domestic goat"
+                              },
+                              "us_state": {
+                                "value": "Alaska"
+                              },
+                              "year": {
+                                "value": "2020"
+                              },
+                              "domestic_pop": {
+                                "value": "Farm 5: Alaska"
+                              }
+                            },
+                            "branch_attrs": {}
+                          },
+                          {
+                            "name": "CHIF7_DAIS",
+                            "node_attrs": {
+                              "div": 0.049014999999999996,
+                              "clade": {
+                                "value": "Goat clade"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "hostspecies": {
+                                "value": "Domestic goat"
+                              },
+                              "us_state": {
+                                "value": "Washington"
+                              },
+                              "year": {
+                                "value": "2019"
+                              },
+                              "domestic_pop": {
+                                "value": "Farm 7: Washington"
+                              }
+                            },
+                            "branch_attrs": {}
+                          }
+                        ]
+                      },
+                      {
+                        "name": "NODE_0000016",
+                        "node_attrs": {
+                          "div": 0.032935
+                        },
+                        "branch_attrs": {},
+                        "children": [
+                          {
+                            "name": "CHIF6_MARM",
+                            "node_attrs": {
+                              "div": 0.052465,
+                              "clade": {
+                                "value": "Goat clade"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "hostspecies": {
+                                "value": "Domestic goat"
+                              },
+                              "us_state": {
+                                "value": "Idaho"
+                              },
+                              "year": {
+                                "value": "2019"
+                              },
+                              "domestic_pop": {
+                                "value": "Farm 6: Idaho"
+                              }
+                            },
+                            "branch_attrs": {}
+                          },
+                          {
+                            "name": "NODE_0000017",
+                            "node_attrs": {
+                              "div": 0.052086999999999994
+                            },
+                            "branch_attrs": {},
+                            "children": [
+                              {
+                                "name": "NODE_0000018",
+                                "node_attrs": {
+                                  "div": 0.052087999999999995
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "OCARG_38",
+                                    "node_attrs": {
+                                      "div": 0.052088999999999996,
+                                      "clade": {
+                                        "value": "Goat clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "New Mexico"
+                                      },
+                                      "wild_pop": {
+                                        "value": "New Mexico: Taos Pueblo"
+                                      },
+                                      "year": {
+                                        "value": "2020"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "OCARG_43",
+                                    "node_attrs": {
+                                      "div": 0.052088999999999996,
+                                      "clade": {
+                                        "value": "Goat clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "New Mexico"
+                                      },
+                                      "wild_pop": {
+                                        "value": "New Mexico: Taos Pueblo"
+                                      },
+                                      "year": {
+                                        "value": "2020"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "NODE_0000019",
+                                "node_attrs": {
+                                  "div": 0.052087999999999995
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "OCARG_27",
+                                    "node_attrs": {
+                                      "div": 0.052088999999999996,
+                                      "clade": {
+                                        "value": "Goat clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "New Mexico"
+                                      },
+                                      "wild_pop": {
+                                        "value": "New Mexico: Taos Pueblo"
+                                      },
+                                      "year": {
+                                        "value": "2020"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "NODE_0000020",
+                                    "node_attrs": {
+                                      "div": 0.052088999999999996
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "OCARG_41",
+                                        "node_attrs": {
+                                          "div": 0.05209,
+                                          "clade": {
+                                            "value": "Goat clade"
+                                          },
+                                          "country": {
+                                            "value": "USA"
+                                          },
+                                          "hostspecies": {
+                                            "value": "Bighorn sheep"
+                                          },
+                                          "us_state": {
+                                            "value": "New Mexico"
+                                          },
+                                          "wild_pop": {
+                                            "value": "New Mexico: Taos Pueblo"
+                                          },
+                                          "year": {
+                                            "value": "2020"
+                                          }
+                                        },
+                                        "branch_attrs": {}
+                                      },
+                                      {
+                                        "name": "NODE_0000021",
+                                        "node_attrs": {
+                                          "div": 0.05209
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OCARG_26",
+                                            "node_attrs": {
+                                              "div": 0.052091,
+                                              "clade": {
+                                                "value": "Goat clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "New Mexico"
+                                              },
+                                              "wild_pop": {
+                                                "value": "New Mexico: Taos Pueblo"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OCARG_36",
+                                            "node_attrs": {
+                                              "div": 0.052091,
+                                              "clade": {
+                                                "value": "Goat clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "New Mexico"
+                                              },
+                                              "wild_pop": {
+                                                "value": "New Mexico: Taos Pueblo"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "NODE_0000022",
+        "node_attrs": {
+          "div": 0.07047
+        },
+        "branch_attrs": {},
+        "children": [
+          {
+            "name": "NODE_0000023",
+            "node_attrs": {
+              "div": 0.077979
+            },
+            "branch_attrs": {},
+            "children": [
+              {
+                "name": "NODE_0000024",
+                "node_attrs": {
+                  "div": 0.11829300000000001
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "RTANC_4336",
+                    "node_attrs": {
+                      "div": 0.11839200000000001,
+                      "clade": {
+                        "value": "Sheep clade"
+                      },
+                      "country": {
+                        "value": "USA"
+                      },
+                      "hostspecies": {
+                        "value": "Caribou"
+                      },
+                      "us_state": {
+                        "value": "Alaska"
+                      },
+                      "year": {
+                        "value": "2019"
+                      }
+                    },
+                    "branch_attrs": {}
+                  },
+                  {
+                    "name": "NODE_0000025",
+                    "node_attrs": {
+                      "div": 0.118344
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "RTANC_4342",
+                        "node_attrs": {
+                          "div": 0.118352,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "USA"
+                          },
+                          "hostspecies": {
+                            "value": "Caribou"
+                          },
+                          "us_state": {
+                            "value": "Alaska"
+                          },
+                          "year": {
+                            "value": "2019"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "RTANC_4341",
+                        "node_attrs": {
+                          "div": 0.11836,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "USA"
+                          },
+                          "hostspecies": {
+                            "value": "Caribou"
+                          },
+                          "us_state": {
+                            "value": "Alaska"
+                          },
+                          "year": {
+                            "value": "2019"
+                          }
+                        },
+                        "branch_attrs": {}
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "NODE_0000026",
+                "node_attrs": {
+                  "div": 0.08289700000000001
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "OARCH_NM2010",
+                    "node_attrs": {
+                      "div": 0.12095700000000001,
+                      "clade": {
+                        "value": "Sheep clade"
+                      },
+                      "country": {
+                        "value": "China"
+                      },
+                      "hostspecies": {
+                        "value": "Domestic sheep"
+                      },
+                      "year": {
+                        "value": "2010"
+                      }
+                    },
+                    "branch_attrs": {}
+                  },
+                  {
+                    "name": "NODE_0000027",
+                    "node_attrs": {
+                      "div": 0.099111
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "OARFR_F10435",
+                        "node_attrs": {
+                          "div": 0.12328800000000001,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "France"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic sheep"
+                          },
+                          "year": {
+                            "value": "2015"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "OARFR_F11630",
+                        "node_attrs": {
+                          "div": 0.122943,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "France"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic sheep"
+                          },
+                          "year": {
+                            "value": "2017"
+                          }
+                        },
+                        "branch_attrs": {}
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "NODE_0000028",
+            "node_attrs": {
+              "div": 0.074922
+            },
+            "branch_attrs": {},
+            "children": [
+              {
+                "name": "NODE_0000029",
+                "node_attrs": {
+                  "div": 0.07938300000000001
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "OARBN_150",
+                    "node_attrs": {
+                      "div": 0.12462400000000001,
+                      "clade": {
+                        "value": "Sheep clade"
+                      },
+                      "country": {
+                        "value": "Bosnia Herzegovina"
+                      },
+                      "hostspecies": {
+                        "value": "Domestic sheep"
+                      },
+                      "year": {
+                        "value": "2009"
+                      }
+                    },
+                    "branch_attrs": {}
+                  },
+                  {
+                    "name": "NODE_0000030",
+                    "node_attrs": {
+                      "div": 0.08876400000000001
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "OARFR_14811",
+                        "node_attrs": {
+                          "div": 0.12788300000000002,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "France"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic sheep"
+                          },
+                          "year": {
+                            "value": "2007"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "OARFR_F9820",
+                        "node_attrs": {
+                          "div": 0.12806,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "France"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic sheep"
+                          },
+                          "year": {
+                            "value": "2015"
+                          }
+                        },
+                        "branch_attrs": {}
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "NODE_0000031",
+                "node_attrs": {
+                  "div": 0.078323
+                },
+                "branch_attrs": {},
+                "children": [
+                  {
+                    "name": "NODE_0000032",
+                    "node_attrs": {
+                      "div": 0.09317600000000001
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "OARAU_ATCC2",
+                        "node_attrs": {
+                          "div": 0.123353,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "Australia"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic sheep"
+                          },
+                          "year": {
+                            "value": "1971"
+                          }
+                        },
+                        "branch_attrs": {}
+                      },
+                      {
+                        "name": "OARAU_ATCC1",
+                        "node_attrs": {
+                          "div": 0.12665900000000002,
+                          "clade": {
+                            "value": "Sheep clade"
+                          },
+                          "country": {
+                            "value": "Australia"
+                          },
+                          "hostspecies": {
+                            "value": "Domestic sheep"
+                          },
+                          "year": {
+                            "value": "1971"
+                          }
+                        },
+                        "branch_attrs": {}
+                      }
+                    ]
+                  },
+                  {
+                    "name": "NODE_0000033",
+                    "node_attrs": {
+                      "div": 0.082483
+                    },
+                    "branch_attrs": {},
+                    "children": [
+                      {
+                        "name": "NODE_0000034",
+                        "node_attrs": {
+                          "div": 0.085767
+                        },
+                        "branch_attrs": {},
+                        "children": [
+                          {
+                            "name": "NODE_0000035",
+                            "node_attrs": {
+                              "div": 0.092912
+                            },
+                            "branch_attrs": {},
+                            "children": [
+                              {
+                                "name": "NODE_0000036",
+                                "node_attrs": {
+                                  "div": 0.129147
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "OCAAI_16495",
+                                    "node_attrs": {
+                                      "div": 0.129148,
+                                      "clade": {
+                                        "value": "Sheep clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "Utah"
+                                      },
+                                      "wild_pop": {
+                                        "value": "Utah: Antelope Island"
+                                      },
+                                      "year": {
+                                        "value": "2019"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "OCAAI_16493",
+                                    "node_attrs": {
+                                      "div": 0.129148,
+                                      "clade": {
+                                        "value": "Sheep clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "Utah"
+                                      },
+                                      "wild_pop": {
+                                        "value": "Utah: Antelope Island"
+                                      },
+                                      "year": {
+                                        "value": "2019"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "NODE_0000037",
+                                "node_attrs": {
+                                  "div": 0.12359999999999999
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "OCALR_180781",
+                                    "node_attrs": {
+                                      "div": 0.130404,
+                                      "clade": {
+                                        "value": "Sheep clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "Idaho"
+                                      },
+                                      "wild_pop": {
+                                        "value": "Idaho: Lost River"
+                                      },
+                                      "year": {
+                                        "value": "2018"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "NODE_0000038",
+                                    "node_attrs": {
+                                      "div": 0.12830799999999998
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "OCALR_180750SP4",
+                                        "node_attrs": {
+                                          "div": 0.13349499999999997,
+                                          "clade": {
+                                            "value": "Sheep clade"
+                                          },
+                                          "country": {
+                                            "value": "USA"
+                                          },
+                                          "hostspecies": {
+                                            "value": "Bighorn sheep"
+                                          },
+                                          "us_state": {
+                                            "value": "Idaho"
+                                          },
+                                          "wild_pop": {
+                                            "value": "Idaho: Lost River"
+                                          },
+                                          "year": {
+                                            "value": "2018"
+                                          }
+                                        },
+                                        "branch_attrs": {}
+                                      },
+                                      {
+                                        "name": "NODE_0000039",
+                                        "node_attrs": {
+                                          "div": 0.13418399999999997
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OCALR_180784SP4",
+                                            "node_attrs": {
+                                              "div": 0.14541499999999996,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Idaho: Lost River"
+                                              },
+                                              "year": {
+                                                "value": "2018"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OCASB_170017",
+                                            "node_attrs": {
+                                              "div": 0.14174499999999998,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Idaho: S. Beaverhead"
+                                              },
+                                              "year": {
+                                                "value": "2017"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "NODE_0000040",
+                            "node_attrs": {
+                              "div": 0.089714
+                            },
+                            "branch_attrs": {},
+                            "children": [
+                              {
+                                "name": "NODE_0000041",
+                                "node_attrs": {
+                                  "div": 0.09320200000000001
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "NODE_0000042",
+                                    "node_attrs": {
+                                      "div": 0.115841
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "OARF1_109",
+                                        "node_attrs": {
+                                          "div": 0.133501,
+                                          "clade": {
+                                            "value": "Sheep clade"
+                                          },
+                                          "country": {
+                                            "value": "USA"
+                                          },
+                                          "hostspecies": {
+                                            "value": "Domestic sheep"
+                                          },
+                                          "us_state": {
+                                            "value": "Idaho"
+                                          },
+                                          "year": {
+                                            "value": "2020"
+                                          },
+                                          "domestic_pop": {
+                                            "value": "Farm 1: Idaho"
+                                          }
+                                        },
+                                        "branch_attrs": {}
+                                      },
+                                      {
+                                        "name": "OARF1_084",
+                                        "node_attrs": {
+                                          "div": 0.133052,
+                                          "clade": {
+                                            "value": "Sheep clade"
+                                          },
+                                          "country": {
+                                            "value": "USA"
+                                          },
+                                          "hostspecies": {
+                                            "value": "Domestic sheep"
+                                          },
+                                          "us_state": {
+                                            "value": "Idaho"
+                                          },
+                                          "year": {
+                                            "value": "2020"
+                                          },
+                                          "domestic_pop": {
+                                            "value": "Farm 1: Idaho"
+                                          }
+                                        },
+                                        "branch_attrs": {}
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "NODE_0000043",
+                                    "node_attrs": {
+                                      "div": 0.09881300000000001
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "NODE_0000044",
+                                        "node_attrs": {
+                                          "div": 0.14352800000000002
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OCAHG_370152",
+                                            "node_attrs": {
+                                              "div": 0.14352900000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Nebraska: Hubbards Gap"
+                                              },
+                                              "year": {
+                                                "value": "2018"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OCAHG_370153",
+                                            "node_attrs": {
+                                              "div": 0.14353600000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Nebraska: Hubbards Gap"
+                                              },
+                                              "year": {
+                                                "value": "2018"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "NODE_0000045",
+                                        "node_attrs": {
+                                          "div": 0.11649600000000002
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF4_W260",
+                                            "node_attrs": {
+                                              "div": 0.13859600000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 4: Nebraska"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OARF4_W2022",
+                                            "node_attrs": {
+                                              "div": 0.14089000000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 4: Nebraska"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "NODE_0000046",
+                                "node_attrs": {
+                                  "div": 0.095138
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "NODE_0000047",
+                                    "node_attrs": {
+                                      "div": 0.100962
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "NODE_0000048",
+                                        "node_attrs": {
+                                          "div": 0.137265
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OCABB_370144",
+                                            "node_attrs": {
+                                              "div": 0.137445,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Nebraska: Barrel Butte"
+                                              },
+                                              "year": {
+                                                "value": "2018"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OCAFR_370127",
+                                            "node_attrs": {
+                                              "div": 0.137433,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Nebraska: Fort Robinson"
+                                              },
+                                              "year": {
+                                                "value": "2018"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "NODE_0000049",
+                                        "node_attrs": {
+                                          "div": 0.108016
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OCASDSU_Mariah",
+                                            "node_attrs": {
+                                              "div": 0.138603,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nevada"
+                                              },
+                                              "wild_pop": {
+                                                "value": "Nevada: Captive"
+                                              },
+                                              "year": {
+                                                "value": "2016"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "NODE_0000050",
+                                            "node_attrs": {
+                                              "div": 0.130575
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "OCAHC_KL3363",
+                                                "node_attrs": {
+                                                  "div": 0.140617,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Bighorn sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Idaho"
+                                                  },
+                                                  "wild_pop": {
+                                                    "value": "Idaho: Black Butte"
+                                                  },
+                                                  "year": {
+                                                    "value": "2008"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              },
+                                              {
+                                                "name": "NODE_0000051",
+                                                "node_attrs": {
+                                                  "div": 0.137955
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "OCALO_20LO68",
+                                                    "node_attrs": {
+                                                      "div": 0.139464,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Bighorn sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Oregon"
+                                                      },
+                                                      "wild_pop": {
+                                                        "value": "Oregon: Lostine"
+                                                      },
+                                                      "year": {
+                                                        "value": "2020"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  },
+                                                  {
+                                                    "name": "OCALO_15LO60",
+                                                    "node_attrs": {
+                                                      "div": 0.140838,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Bighorn sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Oregon"
+                                                      },
+                                                      "wild_pop": {
+                                                        "value": "Oregon: Lostine"
+                                                      },
+                                                      "year": {
+                                                        "value": "2020"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "NODE_0000052",
+                                    "node_attrs": {
+                                      "div": 0.098701
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "NODE_0000053",
+                                        "node_attrs": {
+                                          "div": 0.120102
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF3_021",
+                                            "node_attrs": {
+                                              "div": 0.137755,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2019"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 3: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "NODE_0000054",
+                                            "node_attrs": {
+                                              "div": 0.136827
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "OARF3_023",
+                                                "node_attrs": {
+                                                  "div": 0.141756,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Domestic sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Idaho"
+                                                  },
+                                                  "year": {
+                                                    "value": "2019"
+                                                  },
+                                                  "domestic_pop": {
+                                                    "value": "Farm 3: Idaho"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              },
+                                              {
+                                                "name": "OARF3_010",
+                                                "node_attrs": {
+                                                  "div": 0.138832,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Domestic sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Idaho"
+                                                  },
+                                                  "year": {
+                                                    "value": "2019"
+                                                  },
+                                                  "domestic_pop": {
+                                                    "value": "Farm 3: Idaho"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "NODE_0000055",
+                                        "node_attrs": {
+                                          "div": 0.10391
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF1_080",
+                                            "node_attrs": {
+                                              "div": 0.138958,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 1: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "NODE_0000056",
+                                            "node_attrs": {
+                                              "div": 0.113624
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "NODE_0000057",
+                                                "node_attrs": {
+                                                  "div": 0.143053
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "OARF3_018",
+                                                    "node_attrs": {
+                                                      "div": 0.14325900000000003,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Domestic sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Idaho"
+                                                      },
+                                                      "year": {
+                                                        "value": "2019"
+                                                      },
+                                                      "domestic_pop": {
+                                                        "value": "Farm 3: Idaho"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  },
+                                                  {
+                                                    "name": "NODE_0000058",
+                                                    "node_attrs": {
+                                                      "div": 0.14321
+                                                    },
+                                                    "branch_attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "name": "OARF3_020",
+                                                        "node_attrs": {
+                                                          "div": 0.143211,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2019"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 3: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      },
+                                                      {
+                                                        "name": "NODE_0000059",
+                                                        "node_attrs": {
+                                                          "div": 0.143295
+                                                        },
+                                                        "branch_attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "name": "OARF3_004",
+                                                            "node_attrs": {
+                                                              "div": 0.143296,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2019"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 3: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          },
+                                                          {
+                                                            "name": "OARF3_011",
+                                                            "node_attrs": {
+                                                              "div": 0.143296,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2019"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 3: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "name": "NODE_0000060",
+                                                "node_attrs": {
+                                                  "div": 0.128792
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "NODE_0000061",
+                                                    "node_attrs": {
+                                                      "div": 0.142424
+                                                    },
+                                                    "branch_attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "name": "OARF3_009",
+                                                        "node_attrs": {
+                                                          "div": 0.152882,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2019"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 3: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      },
+                                                      {
+                                                        "name": "OARF3_062",
+                                                        "node_attrs": {
+                                                          "div": 0.147653,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2019"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 3: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "name": "NODE_0000062",
+                                                    "node_attrs": {
+                                                      "div": 0.136256
+                                                    },
+                                                    "branch_attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "name": "OARF3_022",
+                                                        "node_attrs": {
+                                                          "div": 0.14223999999999998,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2019"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 3: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      },
+                                                      {
+                                                        "name": "NODE_0000063",
+                                                        "node_attrs": {
+                                                          "div": 0.145638
+                                                        },
+                                                        "branch_attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "name": "OARF3_014",
+                                                            "node_attrs": {
+                                                              "div": 0.151385,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2019"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 3: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          },
+                                                          {
+                                                            "name": "OARF3_026",
+                                                            "node_attrs": {
+                                                              "div": 0.14679599999999998,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2019"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 3: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "NODE_0000064",
+                        "node_attrs": {
+                          "div": 0.08570900000000001
+                        },
+                        "branch_attrs": {},
+                        "children": [
+                          {
+                            "name": "NODE_0000065",
+                            "node_attrs": {
+                              "div": 0.089552
+                            },
+                            "branch_attrs": {},
+                            "children": [
+                              {
+                                "name": "OARF3_065",
+                                "node_attrs": {
+                                  "div": 0.126732,
+                                  "clade": {
+                                    "value": "Sheep clade"
+                                  },
+                                  "country": {
+                                    "value": "USA"
+                                  },
+                                  "hostspecies": {
+                                    "value": "Domestic sheep"
+                                  },
+                                  "us_state": {
+                                    "value": "Idaho"
+                                  },
+                                  "year": {
+                                    "value": "2019"
+                                  },
+                                  "domestic_pop": {
+                                    "value": "Farm 3: Idaho"
+                                  }
+                                },
+                                "branch_attrs": {}
+                              },
+                              {
+                                "name": "NODE_0000066",
+                                "node_attrs": {
+                                  "div": 0.09706400000000001
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "OCABH_190781",
+                                    "node_attrs": {
+                                      "div": 0.13370200000000002,
+                                      "clade": {
+                                        "value": "Sheep clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Bighorn sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "Arizona"
+                                      },
+                                      "wild_pop": {
+                                        "value": "Arizona: Bighorns"
+                                      },
+                                      "year": {
+                                        "value": "2019"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "NODE_0000067",
+                                    "node_attrs": {
+                                      "div": 0.132407
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "OCAVM_190660",
+                                        "node_attrs": {
+                                          "div": 0.133901,
+                                          "clade": {
+                                            "value": "Sheep clade"
+                                          },
+                                          "country": {
+                                            "value": "USA"
+                                          },
+                                          "hostspecies": {
+                                            "value": "Bighorn sheep"
+                                          },
+                                          "us_state": {
+                                            "value": "Arizona"
+                                          },
+                                          "wild_pop": {
+                                            "value": "Arizona: Vermillions"
+                                          },
+                                          "year": {
+                                            "value": "2019"
+                                          }
+                                        },
+                                        "branch_attrs": {}
+                                      },
+                                      {
+                                        "name": "OCAVM_190653",
+                                        "node_attrs": {
+                                          "div": 0.133847,
+                                          "clade": {
+                                            "value": "Sheep clade"
+                                          },
+                                          "country": {
+                                            "value": "USA"
+                                          },
+                                          "hostspecies": {
+                                            "value": "Bighorn sheep"
+                                          },
+                                          "us_state": {
+                                            "value": "Arizona"
+                                          },
+                                          "wild_pop": {
+                                            "value": "Arizona: Vermillions"
+                                          },
+                                          "year": {
+                                            "value": "2019"
+                                          }
+                                        },
+                                        "branch_attrs": {}
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "NODE_0000068",
+                            "node_attrs": {
+                              "div": 0.08879600000000001
+                            },
+                            "branch_attrs": {},
+                            "children": [
+                              {
+                                "name": "NODE_0000069",
+                                "node_attrs": {
+                                  "div": 0.11042400000000002
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "OARF2_123",
+                                    "node_attrs": {
+                                      "div": 0.13053900000000002,
+                                      "clade": {
+                                        "value": "Sheep clade"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "hostspecies": {
+                                        "value": "Domestic sheep"
+                                      },
+                                      "us_state": {
+                                        "value": "Idaho"
+                                      },
+                                      "year": {
+                                        "value": "2020"
+                                      },
+                                      "domestic_pop": {
+                                        "value": "Farm 2: Idaho"
+                                      }
+                                    },
+                                    "branch_attrs": {}
+                                  },
+                                  {
+                                    "name": "NODE_0000070",
+                                    "node_attrs": {
+                                      "div": 0.12640800000000002
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "NODE_0000071",
+                                        "node_attrs": {
+                                          "div": 0.13337400000000002
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF2_122",
+                                            "node_attrs": {
+                                              "div": 0.13407400000000003,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 2: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OARF2_117",
+                                            "node_attrs": {
+                                              "div": 0.13523500000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 2: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "NODE_0000072",
+                                        "node_attrs": {
+                                          "div": 0.13536900000000002
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF2_118",
+                                            "node_attrs": {
+                                              "div": 0.13537700000000003,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 2: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OARF2_116",
+                                            "node_attrs": {
+                                              "div": 0.13537000000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 2: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "NODE_0000073",
+                                "node_attrs": {
+                                  "div": 0.09196100000000001
+                                },
+                                "branch_attrs": {},
+                                "children": [
+                                  {
+                                    "name": "NODE_0000074",
+                                    "node_attrs": {
+                                      "div": 0.09570100000000001
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "NODE_0000075",
+                                        "node_attrs": {
+                                          "div": 0.102717
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF4_W2044",
+                                            "node_attrs": {
+                                              "div": 0.131964,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Nebraska"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 4: Nebraska"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OARBZ_USPBR2017",
+                                            "node_attrs": {
+                                              "div": 0.141748,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "Brazil"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "year": {
+                                                "value": "2017"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "NODE_0000076",
+                                        "node_attrs": {
+                                          "div": 0.101426
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "NODE_0000077",
+                                            "node_attrs": {
+                                              "div": 0.129953
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "OCABB_370142",
+                                                "node_attrs": {
+                                                  "div": 0.133688,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Bighorn sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Nebraska"
+                                                  },
+                                                  "wild_pop": {
+                                                    "value": "Nebraska: Barrel Butte"
+                                                  },
+                                                  "year": {
+                                                    "value": "2018"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              },
+                                              {
+                                                "name": "OCAFR_370126",
+                                                "node_attrs": {
+                                                  "div": 0.13278900000000002,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Bighorn sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Nebraska"
+                                                  },
+                                                  "wild_pop": {
+                                                    "value": "Nebraska: Fort Robinson"
+                                                  },
+                                                  "year": {
+                                                    "value": "2019"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "NODE_0000078",
+                                            "node_attrs": {
+                                              "div": 0.123907
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "OARF1_099",
+                                                "node_attrs": {
+                                                  "div": 0.134809,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Domestic sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Idaho"
+                                                  },
+                                                  "year": {
+                                                    "value": "2020"
+                                                  },
+                                                  "domestic_pop": {
+                                                    "value": "Farm 1: Idaho"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              },
+                                              {
+                                                "name": "NODE_0000079",
+                                                "node_attrs": {
+                                                  "div": 0.13672700000000002
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "OARF1_110",
+                                                    "node_attrs": {
+                                                      "div": 0.13673500000000002,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Domestic sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Idaho"
+                                                      },
+                                                      "year": {
+                                                        "value": "2020"
+                                                      },
+                                                      "domestic_pop": {
+                                                        "value": "Farm 1: Idaho"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  },
+                                                  {
+                                                    "name": "NODE_0000080",
+                                                    "node_attrs": {
+                                                      "div": 0.13672800000000002
+                                                    },
+                                                    "branch_attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "name": "OARF1_104",
+                                                        "node_attrs": {
+                                                          "div": 0.13673600000000002,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2020"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 1: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      },
+                                                      {
+                                                        "name": "NODE_0000081",
+                                                        "node_attrs": {
+                                                          "div": 0.13672900000000002
+                                                        },
+                                                        "branch_attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "name": "OARF1_091",
+                                                            "node_attrs": {
+                                                              "div": 0.13673000000000002,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2020"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 1: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          },
+                                                          {
+                                                            "name": "NODE_0000082",
+                                                            "node_attrs": {
+                                                              "div": 0.13673000000000002
+                                                            },
+                                                            "branch_attrs": {},
+                                                            "children": [
+                                                              {
+                                                                "name": "OARF1_101",
+                                                                "node_attrs": {
+                                                                  "div": 0.13673800000000003,
+                                                                  "clade": {
+                                                                    "value": "Sheep clade"
+                                                                  },
+                                                                  "country": {
+                                                                    "value": "USA"
+                                                                  },
+                                                                  "hostspecies": {
+                                                                    "value": "Domestic sheep"
+                                                                  },
+                                                                  "us_state": {
+                                                                    "value": "Idaho"
+                                                                  },
+                                                                  "year": {
+                                                                    "value": "2020"
+                                                                  },
+                                                                  "domestic_pop": {
+                                                                    "value": "Farm 1: Idaho"
+                                                                  }
+                                                                },
+                                                                "branch_attrs": {}
+                                                              },
+                                                              {
+                                                                "name": "NODE_0000083",
+                                                                "node_attrs": {
+                                                                  "div": 0.13673100000000002
+                                                                },
+                                                                "branch_attrs": {},
+                                                                "children": [
+                                                                  {
+                                                                    "name": "OARF1_082",
+                                                                    "node_attrs": {
+                                                                      "div": 0.13673200000000002,
+                                                                      "clade": {
+                                                                        "value": "Sheep clade"
+                                                                      },
+                                                                      "country": {
+                                                                        "value": "USA"
+                                                                      },
+                                                                      "hostspecies": {
+                                                                        "value": "Domestic sheep"
+                                                                      },
+                                                                      "us_state": {
+                                                                        "value": "Idaho"
+                                                                      },
+                                                                      "year": {
+                                                                        "value": "2020"
+                                                                      },
+                                                                      "domestic_pop": {
+                                                                        "value": "Farm 1: Idaho"
+                                                                      }
+                                                                    },
+                                                                    "branch_attrs": {}
+                                                                  },
+                                                                  {
+                                                                    "name": "OARF1_094",
+                                                                    "node_attrs": {
+                                                                      "div": 0.136746,
+                                                                      "clade": {
+                                                                        "value": "Sheep clade"
+                                                                      },
+                                                                      "country": {
+                                                                        "value": "USA"
+                                                                      },
+                                                                      "hostspecies": {
+                                                                        "value": "Domestic sheep"
+                                                                      },
+                                                                      "us_state": {
+                                                                        "value": "Idaho"
+                                                                      },
+                                                                      "year": {
+                                                                        "value": "2020"
+                                                                      },
+                                                                      "domestic_pop": {
+                                                                        "value": "Farm 1: Idaho"
+                                                                      }
+                                                                    },
+                                                                    "branch_attrs": {}
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "NODE_0000084",
+                                    "node_attrs": {
+                                      "div": 0.09525300000000002
+                                    },
+                                    "branch_attrs": {},
+                                    "children": [
+                                      {
+                                        "name": "NODE_0000085",
+                                        "node_attrs": {
+                                          "div": 0.10249500000000002
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "OARF1_095",
+                                            "node_attrs": {
+                                              "div": 0.135525,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Domestic sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "Idaho"
+                                              },
+                                              "year": {
+                                                "value": "2020"
+                                              },
+                                              "domestic_pop": {
+                                                "value": "Farm 1: Idaho"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          },
+                                          {
+                                            "name": "OCARC_BH346",
+                                            "node_attrs": {
+                                              "div": 0.13456500000000002,
+                                              "clade": {
+                                                "value": "Sheep clade"
+                                              },
+                                              "country": {
+                                                "value": "USA"
+                                              },
+                                              "hostspecies": {
+                                                "value": "Bighorn sheep"
+                                              },
+                                              "us_state": {
+                                                "value": "South Dakota"
+                                              },
+                                              "wild_pop": {
+                                                "value": "South Dakota: Rapid Creek"
+                                              },
+                                              "year": {
+                                                "value": "2017"
+                                              }
+                                            },
+                                            "branch_attrs": {}
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "NODE_0000086",
+                                        "node_attrs": {
+                                          "div": 0.09816500000000002
+                                        },
+                                        "branch_attrs": {},
+                                        "children": [
+                                          {
+                                            "name": "NODE_0000087",
+                                            "node_attrs": {
+                                              "div": 0.10539600000000002
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "OCAEM_3098",
+                                                "node_attrs": {
+                                                  "div": 0.13832500000000003,
+                                                  "clade": {
+                                                    "value": "Sheep clade"
+                                                  },
+                                                  "country": {
+                                                    "value": "USA"
+                                                  },
+                                                  "hostspecies": {
+                                                    "value": "Bighorn sheep"
+                                                  },
+                                                  "us_state": {
+                                                    "value": "Montana"
+                                                  },
+                                                  "wild_pop": {
+                                                    "value": "Montana: Elkhorn Mtns"
+                                                  },
+                                                  "year": {
+                                                    "value": "2008"
+                                                  }
+                                                },
+                                                "branch_attrs": {}
+                                              },
+                                              {
+                                                "name": "NODE_0000088",
+                                                "node_attrs": {
+                                                  "div": 0.13299400000000003
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "OARF1_105",
+                                                    "node_attrs": {
+                                                      "div": 0.13820400000000002,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Domestic sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Idaho"
+                                                      },
+                                                      "year": {
+                                                        "value": "2020"
+                                                      },
+                                                      "domestic_pop": {
+                                                        "value": "Farm 1: Idaho"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  },
+                                                  {
+                                                    "name": "NODE_0000089",
+                                                    "node_attrs": {
+                                                      "div": 0.13621800000000003
+                                                    },
+                                                    "branch_attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "name": "OARF1_107",
+                                                        "node_attrs": {
+                                                          "div": 0.13622600000000004,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2020"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 1: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      },
+                                                      {
+                                                        "name": "OARF1_102",
+                                                        "node_attrs": {
+                                                          "div": 0.13621900000000003,
+                                                          "clade": {
+                                                            "value": "Sheep clade"
+                                                          },
+                                                          "country": {
+                                                            "value": "USA"
+                                                          },
+                                                          "hostspecies": {
+                                                            "value": "Domestic sheep"
+                                                          },
+                                                          "us_state": {
+                                                            "value": "Idaho"
+                                                          },
+                                                          "year": {
+                                                            "value": "2020"
+                                                          },
+                                                          "domestic_pop": {
+                                                            "value": "Farm 1: Idaho"
+                                                          }
+                                                        },
+                                                        "branch_attrs": {}
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "NODE_0000090",
+                                            "node_attrs": {
+                                              "div": 0.10711200000000001
+                                            },
+                                            "branch_attrs": {},
+                                            "children": [
+                                              {
+                                                "name": "NODE_0000091",
+                                                "node_attrs": {
+                                                  "div": 0.13367
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "OCAWY_21336",
+                                                    "node_attrs": {
+                                                      "div": 0.133747,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Bighorn sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Wyoming"
+                                                      },
+                                                      "wild_pop": {
+                                                        "value": "Wyoming: Whiskey"
+                                                      },
+                                                      "year": {
+                                                        "value": "2021"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  },
+                                                  {
+                                                    "name": "OCAWY_21255",
+                                                    "node_attrs": {
+                                                      "div": 0.13379300000000002,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Bighorn sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Wyoming"
+                                                      },
+                                                      "wild_pop": {
+                                                        "value": "Wyoming: Whiskey"
+                                                      },
+                                                      "year": {
+                                                        "value": "2021"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "name": "NODE_0000092",
+                                                "node_attrs": {
+                                                  "div": 0.13415400000000002
+                                                },
+                                                "branch_attrs": {},
+                                                "children": [
+                                                  {
+                                                    "name": "OARF2_126",
+                                                    "node_attrs": {
+                                                      "div": 0.134171,
+                                                      "clade": {
+                                                        "value": "Sheep clade"
+                                                      },
+                                                      "country": {
+                                                        "value": "USA"
+                                                      },
+                                                      "hostspecies": {
+                                                        "value": "Domestic sheep"
+                                                      },
+                                                      "us_state": {
+                                                        "value": "Idaho"
+                                                      },
+                                                      "year": {
+                                                        "value": "2020"
+                                                      },
+                                                      "domestic_pop": {
+                                                        "value": "Farm 2: Idaho"
+                                                      }
+                                                    },
+                                                    "branch_attrs": {}
+                                                  },
+                                                  {
+                                                    "name": "NODE_0000093",
+                                                    "node_attrs": {
+                                                      "div": 0.13416000000000003
+                                                    },
+                                                    "branch_attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "name": "NODE_0000094",
+                                                        "node_attrs": {
+                                                          "div": 0.13416100000000003
+                                                        },
+                                                        "branch_attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "name": "OARF2_128",
+                                                            "node_attrs": {
+                                                              "div": 0.13416200000000003,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2020"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 2: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          },
+                                                          {
+                                                            "name": "OARF2_124",
+                                                            "node_attrs": {
+                                                              "div": 0.13416200000000003,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2020"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 2: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "name": "NODE_0000095",
+                                                        "node_attrs": {
+                                                          "div": 0.13416800000000004
+                                                        },
+                                                        "branch_attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "name": "OARF2_125",
+                                                            "node_attrs": {
+                                                              "div": 0.13417600000000005,
+                                                              "clade": {
+                                                                "value": "Sheep clade"
+                                                              },
+                                                              "country": {
+                                                                "value": "USA"
+                                                              },
+                                                              "hostspecies": {
+                                                                "value": "Domestic sheep"
+                                                              },
+                                                              "us_state": {
+                                                                "value": "Idaho"
+                                                              },
+                                                              "year": {
+                                                                "value": "2020"
+                                                              },
+                                                              "domestic_pop": {
+                                                                "value": "Farm 2: Idaho"
+                                                              }
+                                                            },
+                                                            "branch_attrs": {}
+                                                          },
+                                                          {
+                                                            "name": "NODE_0000096",
+                                                            "node_attrs": {
+                                                              "div": 0.13418400000000003
+                                                            },
+                                                            "branch_attrs": {},
+                                                            "children": [
+                                                              {
+                                                                "name": "OARF2_112",
+                                                                "node_attrs": {
+                                                                  "div": 0.13419200000000003,
+                                                                  "clade": {
+                                                                    "value": "Sheep clade"
+                                                                  },
+                                                                  "country": {
+                                                                    "value": "USA"
+                                                                  },
+                                                                  "hostspecies": {
+                                                                    "value": "Domestic sheep"
+                                                                  },
+                                                                  "us_state": {
+                                                                    "value": "Idaho"
+                                                                  },
+                                                                  "year": {
+                                                                    "value": "2020"
+                                                                  },
+                                                                  "domestic_pop": {
+                                                                    "value": "Farm 2: Idaho"
+                                                                  }
+                                                                },
+                                                                "branch_attrs": {}
+                                                              },
+                                                              {
+                                                                "name": "OARF2_120",
+                                                                "node_attrs": {
+                                                                  "div": 0.13418500000000003,
+                                                                  "clade": {
+                                                                    "value": "Sheep clade"
+                                                                  },
+                                                                  "country": {
+                                                                    "value": "USA"
+                                                                  },
+                                                                  "hostspecies": {
+                                                                    "value": "Domestic sheep"
+                                                                  },
+                                                                  "us_state": {
+                                                                    "value": "Idaho"
+                                                                  },
+                                                                  "year": {
+                                                                    "value": "2020"
+                                                                  },
+                                                                  "domestic_pop": {
+                                                                    "value": "Farm 2: Idaho"
+                                                                  }
+                                                                },
+                                                                "branch_attrs": {}
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
