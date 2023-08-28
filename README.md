@@ -108,9 +108,9 @@ scoary -g RoaryGenes_forScoary.csv -t ScoaryTraits.csv
 ```
 ### Phylogenetic analysis using RAxML
 ```
-raxml-ng --msa core_gene_alignment.aln --model GTR+G --prefix T1 --threads 20 --seed 2 --tree pars{25},rand{25}
+raxml-ng --msa ./04-Roary/Prank_all/core_gene_alignment.aln --model GTR+G --prefix T1 --threads 20 --seed 2 --tree pars{25},rand{25}
 
-raxml-ng --bootstrap --msa core_gene_alignment.aln --model GTR+G --prefix T2 --seed 2 --threads 20
+raxml-ng --bootstrap --msa ./04-Roary/Prank_all/core_gene_alignment.aln --model GTR+G --prefix T2 --seed 2 --threads 20
 
 raxml-ng --support --tree T1.raxml.bestTree --bs-trees T2.raxml.bootstraps --prefix T3 --threads 2 
 ```
@@ -134,4 +134,9 @@ Example command:
 ```
 perl CRISPRCasFinder.pl -in ./02-assembled/Sample01.fna  -cas -keep -log -gcode 4
 ```
+### Create interactive phylogeny with Nextstrain
+```
+augur refine --tree ./04-Roary/Prank_all/T3.raxml.bestTree --alignment ./04-Roary/Prank_all/core_gene_alignment.aln --output-tree ./07-Nextstrain/T3.raxml.bestTree_forAuspice.nwk --output-node-data  ./07-Nextstrain/Tree_NodeData.json --root mid_point
 
+augur export v2 --tree ./07-Nextstrain/T3.raxml.bestTree_forAuspice.nwk  --node-data ./07-Nextstrain/Tree_NodeData.json  --output ./07-Nextstrain/Movi_phylogeny.json --metadata ./07-Nextstrain/MoviMetadataForAuspice.txt --auspice-config ./07-Nextstrain/Movi_auspice_config.json --colors metadata_colors.tsv 
+```
