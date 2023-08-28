@@ -113,6 +113,7 @@ raxml-ng --msa ./04-Roary/Prank_all/core_gene_alignment.aln --model GTR+G --pref
 raxml-ng --bootstrap --msa ./04-Roary/Prank_all/core_gene_alignment.aln --model GTR+G --prefix T2 --seed 2 --threads 20
 
 raxml-ng --support --tree T1.raxml.bestTree --bs-trees T2.raxml.bootstraps --prefix T3 --threads 2 
+
 ```
 
 ### Calculate Average Nucleotide Identity with FastANI
@@ -136,7 +137,7 @@ perl CRISPRCasFinder.pl -in ./02-assembled/Sample01.fna  -cas -keep -log -gcode 
 ```
 ### Create interactive phylogeny with Nextstrain
 ```
-augur refine --tree ./04-Roary/Prank_all/T3.raxml.bestTree --alignment ./04-Roary/Prank_all/core_gene_alignment.aln --output-tree ./07-Nextstrain/T3.raxml.bestTree_forAuspice.nwk --output-node-data  ./07-Nextstrain/Tree_NodeData.json --root mid_point
+augur refine --tree T3.raxml.bestTree --alignment ./04-Roary/Prank_all/core_gene_alignment.aln --output-tree ./07-Nextstrain/T3.raxml.bestTree_forAuspice.nwk --output-node-data  ./07-Nextstrain/Tree_NodeData.json --root mid_point
 
 augur export v2 --tree ./07-Nextstrain/T3.raxml.bestTree_forAuspice.nwk  --node-data ./07-Nextstrain/Tree_NodeData.json  --output ./07-Nextstrain/Movi_phylogeny.json --metadata ./07-Nextstrain/MoviMetadataForAuspice.txt --auspice-config ./07-Nextstrain/Movi_auspice_config.json --colors metadata_colors.tsv 
 ```
