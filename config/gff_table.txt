@@ -1,0 +1,4 @@
+results/annotated/GCA_001714895.1_ASM171489v1_genomic.gff   GCA_001714895.1_ASM171489v1_genomic
+results/annotated/GCA_000218525.2_ASM21852v2_genomic.gff    GCA_000218525.2_ASM21852v2_genomic
+results/annotated/GCA_000590415.1_Version_1.0_genomic.gff   GCA_000590415.1_Version_1.0_genomic
+results/annotated/GCA_001715025.1_ASM171502v1_genomic.gff   GCA_001715025.1_ASM171502v1_genomic
