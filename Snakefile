@@ -22,7 +22,9 @@ rule all:
         "results/pangenome/core_gene_alignment.aln",
         "results/T1.raxml.bestTree",
         "results/T2.raxml.bootstraps",
-        "results/T3.raxml.support"
+        "results/T3.raxml.support",
+        "results/T1.raxml.bestTree_augur.nwk"
+
 
 rule assess:
     input:
@@ -82,7 +84,7 @@ rule annotate:
         {input.assemblies}  &> {log} 
         """
 
-rule pangenome:
+checkpoint pangenome:
     input: 
         annotated = expand("results/annotated/{sample}.gff", sample=samplenames)
     output: 
@@ -107,11 +109,20 @@ rule pangenome:
         {input.annotated}  &> {log} 
         """
 
+def sidekick_input(wildcards):
+    checkpoint_output = checkpoints.pangenome.get(**wildcards).output[0]
+    return expand("results/pangenome/pan_genome_sequences/{i}.txt",
+                  i=glob_wildcards(os.path.join(checkpoint_output, "{i}.fa.aln")).i)
+
+def sidekick_output(wildcards):
+    checkpoint_output = checkpoints.pangenome.get(**wildcards).output[0]
+    return expand("results/pangenome/sidekickgenes/{i}.txt",
+                  i=glob_wildcards(os.path.join(checkpoint_output, "{i}.fa.aln")).i)
+
 rule sidekick:
     input:
-        datafolder = "results/pangenome/pan_genome_sequences"
-    output:
-        sidekickgenes = "fixthis!!!"
+        sidekick_input
+#    output:
     log:
         "logs/sidekick.txt"
     conda:
@@ -192,5 +203,28 @@ rule tree3:
         --threads {threads} &> {log}; \
         mv T3* results  
         """
+
+rule nextstrain1:
+    input:
+        besttree = "results/T1.raxml.bestTree",
+        alignment = "results/pangenome/core_gene_alignment.aln"
+    output:
+        augurtree = "results/T1.raxml.bestTree_augur.nwk",
+        nodes = "results/Tree_NodeData.json"
+    log:
+        "logs/nextstrain1.txt"
+    conda:
+        "envs/nextstrain.yaml"
+    threads: 4
+    shell:
+        """
+        augur refine \
+        --tree {input.besttree} \
+        --alignment {input.alignment} \
+        --output-tree {output.augurtree} \
+        --output-node-data {output.nodes} \
+        --root mid_point &> {log}; 
+        """
+
 
 

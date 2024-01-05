@@ -1,0 +1,9 @@
+channels:
+  - conda-forge
+  - bioconda
+  - default
+dependencies:
+  - augur
+  - snakemake
+  - python=3.8
+
