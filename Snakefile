@@ -3,14 +3,12 @@ Movi analysis
 """
 
 #Requirements:
-#In config folder: assemblylist.txt and gff_table.txt
-#In data folder: genome assemblies in fasta format
+#In data directory: genome assemblies in fasta format
+#In config directory: assemblylist.txt and gff_table.txt
 
 from pathlib import Path
-assemblylist = open("config/assemblylist.txt")
-lines=assemblylist.readlines()
-filenames=[line.strip() for line in lines]
-samplenames = [Path(file).stem for file in filenames]
+with open("config/assemblylist.txt", "r", encoding="utf-8") as assemblylist:
+    samplenames = [Path(filename.strip()).stem for filename in assemblylist]
 
 configfile: "config/config.yaml" 
 
@@ -20,11 +18,12 @@ rule all:
         "results/assess/out_checkm.tab",
         "results/out_fastani.tsv.matrix",
         "results/pangenome/core_gene_alignment.aln",
-        "results/T1.raxml.bestTree",
-        "results/T2.raxml.bootstraps",
-        "results/T3.raxml.support",
-        "results/T1.raxml.bestTree_augur.nwk"
-
+        "results/tree/T1.raxml.bestTree",
+        "results/tree/T2.raxml.bootstraps",
+        "results/tree/T3.raxml.support",
+        "results/tree/T1.raxml.bestTree_augur.nwk",
+        "results/tree/Tree_auspice.json",
+        "sidekick.done"
 
 rule assess:
     input:
@@ -84,7 +83,7 @@ rule annotate:
         {input.assemblies}  &> {log} 
         """
 
-checkpoint pangenome:
+rule pangenome:
     input: 
         annotated = expand("results/annotated/{sample}.gff", sample=samplenames)
     output: 
@@ -109,20 +108,11 @@ checkpoint pangenome:
         {input.annotated}  &> {log} 
         """
 
-def sidekick_input(wildcards):
-    checkpoint_output = checkpoints.pangenome.get(**wildcards).output[0]
-    return expand("results/pangenome/pan_genome_sequences/{i}.txt",
-                  i=glob_wildcards(os.path.join(checkpoint_output, "{i}.fa.aln")).i)
-
-def sidekick_output(wildcards):
-    checkpoint_output = checkpoints.pangenome.get(**wildcards).output[0]
-    return expand("results/pangenome/sidekickgenes/{i}.txt",
-                  i=glob_wildcards(os.path.join(checkpoint_output, "{i}.fa.aln")).i)
-
 rule sidekick:
     input:
-        sidekick_input
-#    output:
+        datafolder = "results/pangenome/pan_genome_sequences"
+    output:
+        touch("sidekick.done")
     log:
         "logs/sidekick.txt"
     conda:
@@ -135,18 +125,18 @@ rule sidekick:
         --output results/pangenome/sidekickgenes  &> {log}
         """
 
-rule tree1:
+rule tree_ml:
     input:
         alignment = "results/pangenome/core_gene_alignment.aln"
     output:
-        besttree = "results/T1.raxml.bestTree" 
+        besttree = "results/tree/T1.raxml.bestTree" 
     log:
-        "logs/tree1.txt"
+        "logs/tree_ml.txt"
     conda:
         "envs/raxml.yaml"
     params:
        model = "GTR+G",
-       prefix = "T1",
+       prefix = "results/tree/T1",
        seed = "2"
     threads: 4
     shell:
@@ -157,41 +147,45 @@ rule tree1:
         --prefix {params.prefix} \
         --threads {threads} \
         --seed {params.seed} \
-        --tree pars{{25}},rand{{25}} &> {log}; \
-        mv T1* results 
+        --tree pars{{25}},rand{{25}} &> {log}
         """
 
-rule tree2:
+rule tree_bootstrap:
     input:
         alignment = "results/pangenome/core_gene_alignment.aln"
     output:
-        bootstraps = "results/T2.raxml.bootstraps" 
+        bootstraps = "results/tree/T2.raxml.bootstraps" 
     log:
-        "logs/tree2.txt"
+        "logs/tree_bootstrap.txt"
     conda:
         "envs/raxml.yaml"
+    params:
+        model = "GTR+G",
+        prefix = "results/tree/T2",
+        seed = "2"
     threads: 4
     shell:
         """
         raxml-ng --bootstrap \
         --msa results/pangenome/core_gene_alignment.aln \
-        --model GTR+G \
-        --prefix T2 \
-        --seed 2 \
-        --threads {threads}  &> {log}; \
-        mv T2* results  
+        --model {params.model} \
+        --prefix {params.prefix} \
+        --seed {params.seed} \
+        --threads {threads}  &> {log}
         """
 
-rule tree3:
+rule tree_mlbootstrap:
     input:
-        besttree = "results/T1.raxml.bestTree",
-        bootstraps = "results/T2.raxml.bootstraps" 
+        besttree = "results/tree/T1.raxml.bestTree",
+        bootstraps = "results/tree/T2.raxml.bootstraps" 
     output:
-        bootstraptree = "results/T3.raxml.support" 
+        bootstraptree = "results/tree/T3.raxml.support" 
     log:
-        "logs/tree3.txt"
+        "logs/tree_mlbootstrap.txt"
     conda:
         "envs/raxml.yaml"
+    params:
+        prefix = "results/tree/T3"
     threads: 4
     shell:
         """
@@ -199,20 +193,19 @@ rule tree3:
         --support \
         --tree {input.besttree} \
         --bs-trees {input.bootstraps} \
-        --prefix T3 \
-        --threads {threads} &> {log}; \
-        mv T3* results  
+        --prefix {params.prefix} \
+        --threads {threads} &> {log}
         """
 
-rule nextstrain1:
+rule nextstrain_refine:
     input:
-        besttree = "results/T1.raxml.bestTree",
+        besttree = "results/tree/T1.raxml.bestTree",
         alignment = "results/pangenome/core_gene_alignment.aln"
     output:
-        augurtree = "results/T1.raxml.bestTree_augur.nwk",
-        nodes = "results/Tree_NodeData.json"
+        augurtree = "results/tree/T1.raxml.bestTree_augur.nwk",
+        nodes = "results/tree/Tree_NodeData.json"
     log:
-        "logs/nextstrain1.txt"
+        "logs/nextstrain_refine.txt"
     conda:
         "envs/nextstrain.yaml"
     threads: 4
@@ -226,5 +219,22 @@ rule nextstrain1:
         --root mid_point &> {log}; 
         """
 
-
+rule nextstrain_export:
+    input:
+        augurtree = "results/tree/T1.raxml.bestTree_augur.nwk",
+        nodes = "results/tree/Tree_NodeData.json"
+    output:
+        auspicetree = "results/tree/Tree_auspice.json"
+    log:
+        "logs/nextstrain_export.txt"
+    conda:
+        "envs/nextstrain.yaml"
+    threads: 4
+    shell:
+        """
+        augur export v2 \
+        --tree {input.augurtree}  \
+        --node-data {input.nodes}  \
+        --output {output.auspicetree}  &> {log}; 
+        """
 

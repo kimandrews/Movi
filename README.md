@@ -15,7 +15,7 @@
     * Create interactive phylogeny with [Nextstrain](https://github.com/nextstrain/augur)
 * Annotate Roary output file pan_genome_reference.fa using [EggNOG-mapper with Diamond reference database](https://github.com/eggnogdb/eggnog-mapper)
 * Find core genes under positive or diversifying selection with [PAML](https://github.com/abacus-gene/paml)
-* PanGWAS using [Scoary](https://github.com/AdmiralenOla/Scoary)
+* PanGWAS with [Scoary](https://github.com/AdmiralenOla/Scoary)
 * Find CRISPR regions with [CrisprCASFinder](https://github.com/dcouvin/CRISPRCasFinder)
 
 ### Analysis commands
@@ -107,8 +107,8 @@ bowtie2 -1 ./00-RawData_Illumina/Sample01_R1.fastq.gz -2 ./00-RawData_Illumina/S
 #### Requirements for Snakemake workflow
 
 * Genome assemblies should be moved into "data" directory: Each assembly should be a separate file in fasta format
-* assemblylist.txt in "config" direcotry: Text file containing one column with relative paths to each assembly
-* gff_table.txt in "config" directory: Text file containing 2 columns, one with the relative paths to each gff file that will be created, and one with sample names
+* assemblylist.txt in "config" directory: Text file containing one column with relative paths to each assembly
+* gff_table.txt in "config" directory: Text file containing 2 columns, one with the relative paths to each gff file that will be created by Prokka, and one with sample names
 
 #### The example snakemake workflow provided here can be run after downloading *M. ovipneumoniae* genome assemblies to the "data" directory using the following commands:
 ```

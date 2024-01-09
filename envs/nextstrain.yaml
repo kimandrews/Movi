@@ -3,7 +3,5 @@ channels:
   - bioconda
   - default
 dependencies:
-  - augur
-  - snakemake
+  - augur=23.1.1
   - python=3.8
-
