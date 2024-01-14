@@ -17,13 +17,9 @@ rule all:
         expand("results/annotated/{sample}.gff", sample=samplenames),
         "results/assess/out_checkm.tab",
         "results/out_fastani.tsv.matrix",
-        "results/pangenome/core_gene_alignment.aln",
-        "results/tree/T1.raxml.bestTree",
-        "results/tree/T2.raxml.bootstraps",
+        "sidekick.done",
         "results/tree/T3.raxml.support",
-        "results/tree/T1.raxml.bestTree_augur.nwk",
-        "results/tree/Tree_auspice.json",
-        "sidekick.done"
+        "results/tree/Tree_auspice.json"
 
 rule assess:
     input:
@@ -94,7 +90,7 @@ rule pangenome:
         "envs/roary.yaml"
     params:
         genetic_code = config["genetic_code"],
-        percent_identity = config["percent_identity"],
+        percent_identity = config["percent_identity"]
     threads: 4
     shell:
         """
@@ -174,14 +170,14 @@ rule tree_bootstrap:
         --threads {threads}  &> {log}
         """
 
-rule tree_mlbootstrap:
+rule tree_support:
     input:
         besttree = "results/tree/T1.raxml.bestTree",
         bootstraps = "results/tree/T2.raxml.bootstraps" 
     output:
         bootstraptree = "results/tree/T3.raxml.support" 
     log:
-        "logs/tree_mlbootstrap.txt"
+        "logs/tree_support.txt"
     conda:
         "envs/raxml.yaml"
     params:
