@@ -1,6 +1,7 @@
 channels:
   - conda-forge
   - bioconda
+  - default
 dependencies:
-  - checkm-genome=1.2.2
-  
+  - augur=23.1.1
+  - python=3.8

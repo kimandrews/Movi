@@ -2,4 +2,4 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - raxml-ng
+  - raxml-ng=1.0.1
